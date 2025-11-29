@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-void nhapMang1Chieu() {
-    int n, i = 0;
+void nhapMang1Chieu(int n) {
+     int i = 0;
     printf("Moi ban nhap so phan tu trong mang: ");
     scanf("%d", &n);
     int array[100];
@@ -19,6 +19,7 @@ void nhapMang1Chieu() {
 
 }
 void chucNang1() {
+    printf("+-----------------------TBC so chia het cho 3 trong mang-------------------------+\n");
     int n, i = 0,dem=0,tong=0;
     printf("Moi ban nhap so phan tu trong mang: ");
     scanf("%d", &n);
@@ -45,6 +46,7 @@ void chucNang1() {
     
 }
 void chucNang2(){
+    printf("+-----------------------Tim Min Max-------------------------+\n");
     int n, i = 0, dem = 0, tong = 0;
     printf("Moi ban nhap so phan tu trong mang: ");
     scanf("%d", &n);
@@ -75,10 +77,58 @@ void chucNang2(){
 
 }
 void chucNang3(){
-    printf("Chuc nang 3");
+    printf("+-----------------------sap xep mang-------------------------+\n");
+    int n, i = 0, temp;
+    printf("Moi ban nhap so phan tu trong mang: ");
+    scanf("%d", &n);
+    int array[100];
+    for (i = 0; i < n; i++)
+    {
+        printf("Moi ban nhap gia tri cua mang a[%d]: ", i);
+        scanf("%d", &array[i]);
+    }
+    printf("Mang ban vua nhap la: \n");
+    for (i = 0; i < n; i++)
+    {
+        printf("a[%d] = %d\n", i, array[i]);
+    }
+    //sap xep mang giam dan dung for
+    for (i = 0; i < n-1; i++)
+    {
+        if (array[i] < array[i + 1]) {
+            temp = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = temp;
+            i = -1;
+        }
+    }
+    printf("mang da sap xep giam dan la: \n");
+    for (i = 0; i < n; i++)
+    {
+        printf("a[%d] = %d\n", i, array[i]);
+    }
+    //sap xep mang tang dan dung while
+    i = 0;
+    while (i < n-1)
+    {
+        if (array[i] > array[i + 1]) {
+            temp = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = temp;
+            i = 0;
+        }
+        else {
+            i++;
+        }
+    }
+    printf("mang da sap xep tang dan la: \n");
+    for (i = 0; i < n; i++)
+    {
+        printf("a[%d] = %d\n", i, array[i]);
+    }
 }
 void chucNang4(){
-    printf("Chuc nang 4");
+    printf("Chuc nang Dang bao tri! Xin vui long quay lai sau");
 }
 void lapChucNang(int check) {
     int checklap = 1;
