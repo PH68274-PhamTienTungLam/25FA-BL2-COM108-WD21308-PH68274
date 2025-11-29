@@ -129,8 +129,8 @@ int main()
     do
     {
         printf("+-----------------------Lap 6-------------------------+\n");
-        printf("| 1. Bai 1                                            |\n");
-        printf("| 2. Bai 2                                            |\n");
+        printf("| 1. Trung binh cong cac so chia het cho 3 trong mang |\n");
+        printf("| 2. Tim Min Max trong mang                           |\n");
         printf("| 3. Bai 3                                            |\n");
         printf("| 4. Bai 4                                            |\n");
         printf("| 0. thoat                                            |\n");
@@ -149,9 +149,11 @@ int main()
             }
             checkSai = 1;
             //menu = -1;
+            system("cls");
             continue;
         }
         lapChucNang(menu);
+        
     } while (menu != 0);
 
 }
