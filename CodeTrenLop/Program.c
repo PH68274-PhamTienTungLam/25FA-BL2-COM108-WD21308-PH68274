@@ -1,8 +1,9 @@
-#define PI 3.14159
+﻿#define PI 3.14159
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 void TinhToanCoBan() {
 
 	//tong hieu 2 so
@@ -198,6 +199,109 @@ void sapXepMang1chieu() {
 		printf("a[%d] = %d\n", i, array[i]);
 	}
 }
+void demoMang2Chieu() {
+	int n, m, i = 0, j = 0;
+	printf("Moi ban nhap so dong trong mang: ");
+	scanf("%d", &n);
+	printf("Moi ban nhap so cot trong mang: ");
+	scanf("%d", &m);
+	int array[100][100];
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < m; j++)
+		{
+			printf("Moi ban nhap gia tri cua mang array[%d][%d]: ", i, j);
+			scanf("%d", &array[i][j]);
+		}
+	}
+	printf("Mang ban vua nhap la: \n");
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < m; j++)
+		{
+			printf("%d\t", array[i][j]);
+		}
+		printf("\n");
+	}
+
+}
+void hinhMang2Chieu() {
+	int n, i = 0, j = 0;
+	printf("Moi ban nhap chieu cao: ");
+	scanf("%d", &n);
+
+	int array[100][100];
+
+	//tam giac vuong goc trai
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("* ");
+
+		}
+		printf("\n");
+	}
+	//tam giac vuong goc phai
+	printf("\n");
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < n - i; j++)
+		{
+			printf("  ");  //2 khoang cach
+		}
+		for (j = 0; j <= i; j++)
+		{
+			printf("* ");
+		}
+		printf("\n");
+	}
+	//tam giac can cong thuc 2*i-1
+	printf("\n");
+	for (i = 1; i <= n; i++) {
+		for (j = 1; j <= n - i; j++) {
+			printf(" ");
+		}
+		for (j = 1; j <= 2 * i - 1; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+	//tam giac can 1 khoang cach
+	printf("\n");
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < n - i; j++)
+		{
+			printf(" ");  //2 khoang cach
+		}
+		for (j = 0; j <= i; j++)
+		{
+			printf("* ");
+		}
+		printf("\n");
+	}
+	
+
+
+}
+void demoMangKyTu() {
+	
+	int c;
+	while ((c = getchar()) != '\n' && c != EOF);   // xoa ky tu con thua
+
+	char mangKyTu[50];
+	printf("Nhap 1 dong: ");
+	fgets(mangKyTu, sizeof(mangKyTu), stdin); // đọc cả khoảng trắng
+	// Loại bỏ ký tự newline nếu có
+	size_t len = strlen(mangKyTu);
+	if (len > 0 && mangKyTu[len - 1] == '\n') {
+		mangKyTu[len - 1] = '\0';
+	}
+
+	printf("Ban vua nhap: %s", mangKyTu);
+
+}
 void lapChucNang(int check) {
 	int i = 1;
 	while (i == 1) {
@@ -307,6 +411,18 @@ void lapChucNang(int check) {
 			system("cls");
 			sapXepMang1chieu();
 			break;
+		case 11:
+			system("cls");
+			demoMang2Chieu();
+			break;
+		case 12:
+			system("cls");
+			hinhMang2Chieu();
+			break;
+		case 13:
+			system("cls");
+			demoMangKyTu();
+			break;
 		case 0:
 			printf("Cam on ban da su dung chuong trinh, tam biet va chuc ban mot ngay tot lanh!");
 			exit(1);
@@ -345,14 +461,17 @@ int main()
 		printf("|  8.  Demo mang 1 chieu                       |\n");
 		printf("|  9.  tim min max mang 1 chieu                |\n");
 		printf("|  10. sap xep mang 1 chieu                    |\n");
+		printf("|  11. Demo mang 2 chieu                       |\n");
+		printf("|  12. Hinh mang 2 chieu                       |\n");
+		printf("|  13. Demo mang ky tu                         |\n");
 		printf("|  0. thoat                                    |\n");
 		printf("+----------------------------------------------+\n");
 		if (checkSai == 1) {
 			printf("Ban da nhap sai! Xin vui long nhap lai!\n");
 			checkSai = 0;
 		}
-		printf("Moi ban chon (1,2,3,4,5,6,7,8,9,10,0): ");
-		if (scanf("%d", &menu) != 1 || menu < 0 || menu >10) {
+		printf("Moi ban chon (1,2,3,4,5,6,7,8,9,10,11,12,13,0): ");
+		if (scanf("%d", &menu) != 1 || menu < 0 || menu >13) {
 			int c;
 			while ((c = getchar()) != '\n' && c != EOF)// xoa bo nho dem tranh xay ra vong lap vo tan || clear buffer
 			{
