@@ -286,10 +286,8 @@ void hinhMang2Chieu() {
 
 }
 void demoMangKyTu() {
-	
 	int c;
 	while ((c = getchar()) != '\n' && c != EOF);   // xoa ky tu con thua
-
 	char mangKyTu[50];
 	printf("Nhap 1 dong: ");
 	fgets(mangKyTu, sizeof(mangKyTu), stdin); // đọc cả khoảng trắng
@@ -298,9 +296,7 @@ void demoMangKyTu() {
 	if (len > 0 && mangKyTu[len - 1] == '\n') {
 		mangKyTu[len - 1] = '\0';
 	}
-
 	printf("Ban vua nhap: %s", mangKyTu);
-
 }
 void lapChucNang(int check) {
 	int i = 1;
