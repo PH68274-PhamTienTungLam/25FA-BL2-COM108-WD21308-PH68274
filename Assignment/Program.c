@@ -427,8 +427,8 @@ void xepLoaiSV(sV *sv) {
 	}
 }
 void xoaBoNhoDem() {
-	int c;
-	while ((c = getchar()) != '\n' && c != EOF);
+	
+	while (getchar() != '\n' && getchar() != EOF);
 }
 void hoanDoi(sV* a, sV* b) {
 	sV temp = *a;
@@ -723,8 +723,8 @@ int main()
 		printf("\nMoi ban nhap (1,2,3,4,5,6,7,8,9,10,0): ");
 
 		if (scanf("%d", &menu) != 1 || menu < 0 || menu >10) {
-			int c;
-			while ((c = getchar()) != '\n' && c != EOF)// xoa bo nho dem tranh xay ra vong lap vo tan || clear buffer
+			
+			while ( getchar() != '\n' && getchar() != EOF)// xoa bo nho dem tranh xay ra vong lap vo tan || clear buffer
 			{
 			}
 			checkSai = 1;

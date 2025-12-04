@@ -300,8 +300,8 @@ void demoMangKyTu() {
 }
 void demoString() {
 
-	int c;
-	while ((c = getchar()) != '\n' && c != EOF);   // xoa ky tu con thua
+	
+	while ( getchar() != '\n' && getchar() != EOF);   // xoa ky tu con thua
 	char mangKyTu[50];
 	printf("Nhap 1 dong: ");
 	fgets(mangKyTu, sizeof(mangKyTu), stdin); // đọc cả khoảng trắng
@@ -310,7 +310,9 @@ void demoString() {
 	if (len > 0 && mangKyTu[len - 1] == '\n') {
 		mangKyTu[len - 1] = '\0';
 	}
-	printf("Ban vua nhap: %s", mangKyTu);
+	
+	printf("Ban vua nhap: %s\n", mangKyTu);
+	printf("do dai cua chuoi la: %d",len-1);
 }
 void lapChucNang(int check) {
 	int i = 1;
