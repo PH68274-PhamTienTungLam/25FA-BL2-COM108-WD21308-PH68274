@@ -1,4 +1,5 @@
 ﻿#define  _CRT_SECURE_NO_WARNINGS
+#define _CRT_NONSTDC_NO_DEPRECATE
 #include <stdio.h>
 #include <math.h>
 #include <windows.h>
@@ -469,13 +470,13 @@ void sapXepTTSinhVien() {
 		}
 		
 	}
-	printf("--------------------------------------------------\n");
-	printf("| %-20s | %-10s |%-13s|\n", "Ho va Ten", "Diem", "Hoc Luc");
+	printf("--------------------------------------------------------\n");
+	printf("| %-25s | %-10s |%-13s|\n", "Ho va Ten", "Diem", "Hoc Luc");
 	printf("--------------------------------------------------\n");
 	for (i = 0; i < n; i++) {
-		printf("| %-20s | %-10.1lf |%-13s|\n",ds[i].hoTen,ds[i].diem,ds[i].hocLuc);
+		printf("| %-25s | %-10.1lf |%-13s|\n",ds[i].hoTen,ds[i].diem,ds[i].hocLuc);
 	}
-	printf("--------------------------------------------------\n");
+	printf("--------------------------------------------------------\n");
 
 }
 void gameFPOLY() {

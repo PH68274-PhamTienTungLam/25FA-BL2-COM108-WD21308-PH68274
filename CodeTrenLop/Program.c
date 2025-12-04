@@ -1,5 +1,6 @@
 ﻿#define PI 3.14159
 #define _CRT_SECURE_NO_WARNINGS
+#define _CRT_NONSTDC_NO_DEPRECATE
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -113,7 +114,6 @@ void inBangCuuChuong39() {
 			i = 0;
 		}
 	}
-
 }
 void demoMang1Chieu() {
 	int n, i = 0;
@@ -298,6 +298,20 @@ void demoMangKyTu() {
 	}
 	printf("Ban vua nhap: %s", mangKyTu);
 }
+void demoString() {
+
+	int c;
+	while ((c = getchar()) != '\n' && c != EOF);   // xoa ky tu con thua
+	char mangKyTu[50];
+	printf("Nhap 1 dong: ");
+	fgets(mangKyTu, sizeof(mangKyTu), stdin); // đọc cả khoảng trắng
+	// Loại bỏ ký tự newline nếu có
+	size_t len = strlen(mangKyTu);
+	if (len > 0 && mangKyTu[len - 1] == '\n') {
+		mangKyTu[len - 1] = '\0';
+	}
+	printf("Ban vua nhap: %s", mangKyTu);
+}
 void lapChucNang(int check) {
 	int i = 1;
 	while (i == 1) {
@@ -419,6 +433,10 @@ void lapChucNang(int check) {
 			system("cls");
 			demoMangKyTu();
 			break;
+		case 14:
+			system("cls");
+			demoString();
+			break;
 		case 0:
 			printf("Cam on ban da su dung chuong trinh, tam biet va chuc ban mot ngay tot lanh!");
 			exit(1);
@@ -460,14 +478,15 @@ int main()
 		printf("|  11. Demo mang 2 chieu                       |\n");
 		printf("|  12. Hinh mang 2 chieu                       |\n");
 		printf("|  13. Demo mang ky tu                         |\n");
+		printf("|  14. Demo String                             |\n");
 		printf("|  0. thoat                                    |\n");
 		printf("+----------------------------------------------+\n");
 		if (checkSai == 1) {
 			printf("Ban da nhap sai! Xin vui long nhap lai!\n");
 			checkSai = 0;
 		}
-		printf("Moi ban chon (1,2,3,4,5,6,7,8,9,10,11,12,13,0): ");
-		if (scanf("%d", &menu) != 1 || menu < 0 || menu >13) {
+		printf("Moi ban chon (1,2,3,4,5,6,7,8,9,10,11,12,13,14,0): ");
+		if (scanf("%d", &menu) != 1 || menu < 0 || menu >14) {
 			int c;
 			while ((c = getchar()) != '\n' && c != EOF)// xoa bo nho dem tranh xay ra vong lap vo tan || clear buffer
 			{
