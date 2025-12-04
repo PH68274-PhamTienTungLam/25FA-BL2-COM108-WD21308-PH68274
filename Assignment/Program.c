@@ -184,7 +184,7 @@ void tinhTienKaraoke() {
 			printf("Ban da nhap sai qua 3 lan!");
 			return;
 		}
-		printf("Quan bat dau tu 12h den 23h! ban da nhap sai(lan %d). Xin vui long nhap lai!", check);
+		printf("Quan bat dau tu 12h den 23h! ban da nhap sai(lan %d). Xin vui long nhap lai!: ", check);
 		scanf("%d", &gioStart);
 		check++;
 	}
@@ -196,7 +196,7 @@ void tinhTienKaraoke() {
 			printf("Ban da nhap sai qua 3 lan!");
 			return;
 		}
-		printf("Phut tu 0 den 59! ban da nhap sai(lan %d). Xin vui long nhap lai!", check);
+		printf("Phut tu 0 den 59! ban da nhap sai(lan %d). Xin vui long nhap lai!: ", check);
 		scanf("%d", &phutStart);
 		check++;
 	}
@@ -209,10 +209,10 @@ void tinhTienKaraoke() {
 			return;
 		}
 		if (gioEnd < gioStart) {
-			printf("Gio ket thuc khong the nho hon gio bat dau! ban da nhap sai(lan %d). Xin vui long nhap lai!", check);
+			printf("Gio ket thuc khong the nho hon gio bat dau! ban da nhap sai(lan %d). Xin vui long nhap lai!: ", check);
 		}
 		else {
-			printf("Quan dong cua luc 23h! ban da nhap sai(lan %d). Xin vui long nhap lai!", check);
+			printf("Quan dong cua luc 23h! ban da nhap sai(lan %d). Xin vui long nhap lai!: ", check);
 		}
 
 		scanf("%d", &gioEnd);
@@ -259,7 +259,7 @@ void tinhTienDien() {
 	printf("+==============Tinh tien dien==============+\n");
 	printf("nhap so dien la: "); scanf("%lf", &SoDien);
 	if (SoDien < 0) {
-		printf("so dien ban nhap chua dung xin vui long kiem tra lai");
+		printf("so dien ban nhap chua dung xin vui long kiem tra lai!");
 	}
 	else if (SoDien <= 50) {
 		GiaDien = SoDien * 50;
@@ -441,6 +441,17 @@ void sapXepTTSinhVien() {
 	int i = 0, n;
 	printf("Moi ban nhap so luong sinh vien can nhap: ");
 	scanf("%d", &n);
+	int check = 0;
+	while(n < 1)
+	{
+		if (check > 3) {
+			printf("ban nhap sai qua 3 lan!");
+			return;
+		}
+		check++;
+		printf("So luong sinh vien phai lon hon 1! (sai lan %d) Xin vui long nhap lai: ",check);
+		scanf("%d",&n);
+	}
 	for (i = 0; i < n; i++) {
 		printf("nhap thong tin sinh vien thu %d: \n", i + 1);
 		printf("Ho va Ten: ");
@@ -541,8 +552,8 @@ void nhapPS(ps *a) {
 	while (a->mau == 0) {
 		if (check >=3) {
 			printf("ban dan nhap sai qua 3 lan!");
-			//return;
-			exit(0);
+			return;
+			//exit(0);
 		}
 		check++;
 		printf("mau so phai khac 0 (sai lan %d )! xin vui long nhap lai: ",check);
@@ -689,6 +700,7 @@ int main()
 	int checkSai = 0;
 	do
 	{
+		system("cls");
 		printf("+----------------------------Menu-------------------------------+\n");
 		printf("| 1.  kiem tra so nguyen                                        |\n");
 		printf("| 2.  tim uoc so chung va boi so chung cua 2 so                 |\n");
