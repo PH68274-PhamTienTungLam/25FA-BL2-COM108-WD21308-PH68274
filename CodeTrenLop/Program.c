@@ -306,13 +306,24 @@ void demoString() {
 	printf("Nhap 1 dong: ");
 	fgets(mangKyTu, sizeof(mangKyTu), stdin); // đọc cả khoảng trắng
 	// Loại bỏ ký tự newline nếu có
-	size_t len = strlen(mangKyTu);
-	if (len > 0 && mangKyTu[len - 1] == '\n') {
-		mangKyTu[len - 1] = '\0';
+	if (strlen(mangKyTu) > 0 && mangKyTu[strlen(mangKyTu) - 1] == '\n') {
+		mangKyTu[strlen(mangKyTu) - 1] = '\0';
 	}
 	
 	printf("Ban vua nhap: %s\n", mangKyTu);
-	printf("do dai cua chuoi la: %d",len-1);
+	printf("do dai cua chuoi la: %d\n", strlen(mangKyTu));
+	printf("So sanh chuoi: %d\n",strcmp("a","b"));
+	printf("dao nguoc chuoi: %s\n",strrev(mangKyTu));
+	printf("dao nguoc chuoi ve nhu ban dau: %s\n",strrev(mangKyTu));
+	printf("Viet thuong: %s\n",strlwr(mangKyTu));
+	printf("viet hoa: %s\n",strupr(mangKyTu));
+	//printf("tim kiem: %s\n",strstr(mangKyTu,"1"));
+	if (strstr(mangKyTu, "1") != NULL) {
+		printf("da tim thay: %s \n",strstr(mangKyTu,"1"));
+	}
+	else {
+		printf("khong tin thay\n");
+	}
 }
 void lapChucNang(int check) {
 	int i = 1;
