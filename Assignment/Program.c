@@ -283,7 +283,7 @@ void tinhTienDien() {
 	else if (SoDien >= 400) {
 		GiaDien = ((SoDien - 400) * bac6) + (bac1 * 50) + (bac2 * 50) + (bac3 * 100) + (bac4 * 100) + (bac5 * 100);
 	}
-	printf("so dien phai dong la: %.2f d", GiaDien);
+	printf("so dien phai dong la: %.2f VND", GiaDien);
 
 
 }
